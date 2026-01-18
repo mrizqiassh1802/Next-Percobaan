@@ -7,7 +7,14 @@ import {
   DropdownMenuItem,
 } from '../ui/dropdown-menu';
 
-import { Button } from '../ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 export default function Header() {
   return (
@@ -16,9 +23,55 @@ export default function Header() {
         <img src="/logo/logo.png" alt="logo" className="w-20" />
       </Link>
       <nav className="flex-column flex items-center text-base font-semibold text-white">
-        <div className="hidden gap-7 md:flex">
-          <Link href="/auth/login">Login</Link>
-          <Link href="/auth/register">Register</Link>
+        <div className="hidden md:flex">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-white focus:bg-transparent focus:text-white focus-visible:bg-transparent focus-visible:text-white data-[state=open]:bg-transparent data-[state=open]:text-white [&>svg]:text-white">
+                  Home
+                </NavigationMenuTrigger>
+
+                <NavigationMenuContent className="bg-black/80 backdrop-blur">
+                  <NavigationMenuLink asChild>
+                    <Link href="/" className="block px-4 py-2 text-white hover:bg-white/10">
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+
+                  <NavigationMenuLink asChild>
+                    <Link href="/help" className="block px-4 py-2 text-white hover:bg-white/10">
+                      Help
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-white focus:bg-transparent focus:text-white focus-visible:bg-transparent focus-visible:text-white data-[state=open]:bg-transparent data-[state=open]:text-white [&>svg]:text-white">
+                  Auth
+                </NavigationMenuTrigger>
+
+                <NavigationMenuContent className="bg-black/80 backdrop-blur">
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/auth/login"
+                      className="block px-4 py-2 text-white hover:bg-white/10"
+                    >
+                      Login
+                    </Link>
+                  </NavigationMenuLink>
+
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/auth/register"
+                      className="block px-4 py-2 text-white hover:bg-white/10"
+                    >
+                      Register
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
         <div className="md:hidden">
           <DropdownMenu>
@@ -26,13 +79,16 @@ export default function Header() {
             <DropdownMenuContent>
               <DropdownMenuGroup>
                 <DropdownMenuItem>
+                  <Link href="/">Home</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/help">Help</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
                   <Link href="/auth/login">Login</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link href="/auth/register">Register</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/">Home</Link>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
