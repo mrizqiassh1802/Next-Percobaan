@@ -3,7 +3,7 @@ const config = {
   plugins: ['prettier-plugin-tailwindcss'],
 
   tailwindFunctions: ['clsx', 'cva'],
-  tailwindStylesheet: './src/app/globals.css',
+  tailwindStylesheet: 'src/app/globals.css',
 
   semi: true,
   singleQuote: true,

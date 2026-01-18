@@ -10,8 +10,6 @@ import {
 export default async function HomeContent() {
   const influencers = await getInfluencer();
 
-  console.log(influencers);
-
   return (
     <div className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-8 m-5 items-center">
       {influencers.map((influencer) => (

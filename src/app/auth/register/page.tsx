@@ -1,3 +1,4 @@
+import RegisterView from '@/features/auth/register/components/RegisterView';
 export default function Register() {
-  return <h1>Halo ini halaman register</h1>;
+  return <RegisterView />;
 }
