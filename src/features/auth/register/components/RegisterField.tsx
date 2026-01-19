@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export default function RegisterField() {
   return (
-    <FieldSet className="w-3/4">
+    <FieldSet className="w-3/4 md:w-1/3">
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="name">Name</FieldLabel>
