@@ -17,6 +17,8 @@ import { useState } from 'react';
 
 import { Separator } from '@/components/ui/separator';
 
+import Image from 'next/image';
+
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
@@ -31,7 +33,7 @@ export default function MobileNav() {
             <SheetTitle></SheetTitle>
             <SheetDescription></SheetDescription>
           </SheetHeader>
-          <img src="/logo/logo-yellow.png" alt="logo" className="mb-5 w-1/2 self-center" />
+          <Image src="/logo/logo.png" width={80} height={100} alt="logo" />
           <Link href="/" onClick={() => setOpen(false)}>
             Home
           </Link>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Logo() {
-  return <img className="mt-10 w-50" src="/logo/logo-yellow.png" alt="logo" />;
+  return <Image src="/logo/logo-yellow.png" width={120} height={100} alt="logo" />;
 }
